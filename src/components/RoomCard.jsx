@@ -44,7 +44,10 @@ const RoomCard = ({ room, floorId, onUpdate, onDelete }) => {
 
     return (
         <>
-            <div className="bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 p-5 cursor-pointer border border-gray-100 group">
+            <div
+                className="bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 p-5 cursor-pointer border border-gray-100 group"
+                style={{ minHeight: '180px', display: 'flex', flexDirection: 'column' }}
+            >
                 {/* Icon + Title */}
                 <div className="flex items-start gap-3 mb-3">
                     <div className="text-2xl">{getIcon(room.type)}</div>
@@ -85,25 +88,27 @@ const RoomCard = ({ room, floorId, onUpdate, onDelete }) => {
                 )}
 
                 {/* Tombol Aksi */}
-                <div className="mt-4 flex justify-between pt-3 border-t border-gray-100">
-                    <button
-                        onClick={handleEdit}
-                        className="text-sm text-blue-600 hover:text-blue-800 font-medium flex items-center"
-                    >
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
-                        </svg>
-                        Edit
-                    </button>
-                    <button
-                        onClick={handleDelete}
-                        className="text-sm text-red-600 hover:text-red-800 font-medium flex items-center"
-                    >
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                        </svg>
-                        Hapus
-                    </button>
+                <div className="mt-auto pt-3 border-t border-gray-100">
+                    <div className="flex justify-between">
+                        <button
+                            onClick={handleEdit}
+                            className="text-sm text-blue-600 hover:text-blue-800 font-medium flex items-center"
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                            </svg>
+                            Edit
+                        </button>
+                        <button
+                            onClick={handleDelete}
+                            className="text-sm text-red-600 hover:text-red-800 font-medium flex items-center"
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                            </svg>
+                            Hapus
+                        </button>
+                    </div>
                 </div>
             </div>
 

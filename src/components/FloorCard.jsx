@@ -27,15 +27,16 @@ const FloorCard = ({ floor, to }) => {
             <div
                 ref={cardRef}
                 className={`${bgColor} ${accentColor} rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 overflow-hidden`}
+                style={{ minHeight: '120px', display: 'flex', flexDirection: 'column' }}
             >
-                <div className="p-6">
-                    <div className="flex justify-between items-start">
-                        <div>
-                            <h3 className="text-xl font-bold text-gray-800">{floor.name}</h3>
-                            <p className="text-sm text-gray-600 mt-1">
-                                {floor.description}
-                            </p>
-                        </div>
+                <div className="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <h3 className="text-xl font-bold text-gray-800">{floor.name}</h3>
+                        <p className="text-sm text-gray-600 mt-1 line-clamp-2">
+                            {floor.description}
+                        </p>
+                    </div>
+                    <div className="mt-2 flex justify-between items-center">
                         <span className="inline-block bg-gray-200 text-gray-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">
                             {floor.id}
                         </span>
